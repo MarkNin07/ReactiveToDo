@@ -29,7 +29,7 @@ public class CreateCategoryUseCase {
 
     public Mono<CategoryDTO> createCategory(CategoryDTO categoryDTO){
         return validateCategDto(categoryDTO)
-                .flatMap(categoryDTO1 -> categoryRepo.save(mapper.toCategoryCollection(categoryDTO)))
+                .flatMap((categoryDTO1) -> categoryRepo.save(mapper.toCategoryCollection(categoryDTO1)))
                 .map(mapper::toCategoryDto);
     }
 
